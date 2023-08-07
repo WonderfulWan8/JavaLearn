@@ -60,7 +60,11 @@ public class MyBatisTestor {
             GoodsDAO goodsDAO = session.getMapper(GoodsDAO.class);
             List list = goodsDAO.selectAll();
             System.out.println(
+<<<<<<< HEAD
                     "test1"
+=======
+                    "test"
+>>>>>>> 8c75cf214895d32c8f934290c603d6539a94118d
             );
             System.out.println(list.size());
         } catch (Exception e) {
