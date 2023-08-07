@@ -59,6 +59,9 @@ public class MyBatisTestor {
             session = MyBatisUtils.openSession();
             GoodsDAO goodsDAO = session.getMapper(GoodsDAO.class);
             List list = goodsDAO.selectAll();
+            System.out.println(
+                    "test"
+            );
             System.out.println(list.size());
         } catch (Exception e) {
             throw e;
