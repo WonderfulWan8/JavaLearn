@@ -1,0 +1,35 @@
+package com.imooc.test;
+
+import com.imooc.practice.p8.Animal;
+import com.imooc.practice.p8.Cat;
+import com.imooc.practice.p8.Dog;
+import com.imooc.practice.p8.Sheep;
+
+public class Test8 {
+	public static void main(String[] args) {
+		Animal[] aList = new Animal[5];
+		int n;
+		for(int i=0;i<aList.length;i++) {
+			 n = (int) (Math.random()*3);
+			 System.out.println("n:"+n);
+			switch (n){
+				case 0:
+					Animal a1 = new Cat();
+					aList[i] = a1;
+					break;
+				case 1:
+					Animal a2 = new Dog();
+					aList[i] = a2;
+					break;
+				case 3:
+					Animal a3 = new Sheep();
+					aList[i] = a3;
+					break;
+			}
+		}
+		for(int i=0;i<aList.length;i++) {
+			System.out.println("aList[i]:"+aList[i]);
+			aList[i].cry();
+		}
+	}
+}

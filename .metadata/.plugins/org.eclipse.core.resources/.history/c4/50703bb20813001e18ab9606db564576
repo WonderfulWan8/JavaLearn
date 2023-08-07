@@ -1,0 +1,22 @@
+package com.imooc.test;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class TryDemoThree {
+
+	public static int test() throws ArithmeticException {
+		Scanner sc = new Scanner(System.in);
+		int one = sc.nextInt();
+		int two = sc.nextInt();
+		System.out.println("1/2:" + one / two);
+		System.out.println("‘ÀÀ„Ω· ¯");
+		return one / two;
+	}
+
+	public static void main(String[] args) {
+		int result = test();
+		System.out.println(result);
+
+	}
+}

@@ -1,0 +1,20 @@
+package com.imooc.test;
+
+import java.util.Scanner;
+
+public class TryDemoOne {
+	public static void main(String[] args) {
+//		int one = 12;
+//		int two = 2;
+//		System.out.println("1/2:"+one/two);
+	
+		Scanner sc = new Scanner(System.in);
+		int one = sc.nextInt();
+		int two = sc.nextInt();
+		try {
+			System.out.println("1/2:"+one/two);			
+		}catch(Error) {
+			System.out.println(Error);
+		}
+	}
+}

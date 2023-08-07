@@ -1,0 +1,28 @@
+package com.imooc.practice.p2;
+
+public class Waxberry extends Fruits {
+	private String color;
+	public Waxberry() {
+		
+	}
+	public Waxberry(String shape,String taste,String color) {
+		super.setShape(shape);
+		super.setTaste(taste);
+		this.setColor(color);
+	}
+	public final void face() {
+		System.out.println("ÑîÃ·£º"+super.getShape()+" "+super.getTaste()+" ¹ûÎ¶ËáÌğÊÊÖĞ");
+	}
+	@Override
+	public void eat() {
+		// TODO Auto-generated method stub
+		System.out.println("ÑîÃ·ËáÌğÊÊÖĞ£¬·Ç³£ºÃ³Ô~£¡");
+	}
+	public String getColor() {
+		return color;
+	}
+	public void setColor(String color) {
+		this.color = color;
+	}
+	
+}

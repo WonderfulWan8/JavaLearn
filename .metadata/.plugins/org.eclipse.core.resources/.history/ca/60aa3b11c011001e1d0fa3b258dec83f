@@ -1,0 +1,12 @@
+
+
+import com.imooc.people.Person.Heart;
+
+public class PeopleTest {
+	public static void main(String[] args) {
+		Person p1  = new Person();
+		p1.age = 22;
+		Heart myHeart =p1.getHeart();
+		myHeart.beat();
+	}
+}

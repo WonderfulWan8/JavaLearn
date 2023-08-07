@@ -1,0 +1,14 @@
+package com.imooc.test;
+
+import com.imooc.animal.Cat;
+import com.imooc.animal.Dog;
+import com.imooc.animal.Master;
+
+public class MasterTest {
+	Master m1 = new Master();
+	Dog d1 = new Dog();
+	Cat c1 = new Cat();
+	
+	
+	
+}

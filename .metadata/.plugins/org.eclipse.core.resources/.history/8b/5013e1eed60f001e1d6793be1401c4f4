@@ -1,0 +1,7 @@
+package com.imooc.tel;
+//接口修饰符 默认public 
+public interface Inet {
+//	接口中抽象方法可以不写abstract
+	public void network();
+	public void connection();
+}

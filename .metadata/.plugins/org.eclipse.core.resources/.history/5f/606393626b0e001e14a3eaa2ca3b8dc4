@@ -1,0 +1,12 @@
+package com.imooc.practice.p2;
+
+public class Waxberry {
+	private String color;
+	public Waxberry() {
+		
+	}
+	public Waxberry(String shape,String,taste,String color) {
+		
+	}
+	
+}

@@ -1,0 +1,80 @@
+package com.imooc.animal;
+
+// final class: 该类没有子类
+public class Animal {
+	private String name;
+	private int month;
+	private String pinzhong;
+	String weight;
+	private static int st1 = 22;
+	public static int st2 = 23;
+
+	static {
+		System.out.println("我是父类的静态代码块");
+	}
+	{
+		System.out.println("我是父类的代码块");
+	}
+
+	public boolean equals(Object one) {
+		Animal two = (Animal) one;
+		if (this.getName().equals(two.getName()) && this.getMonth() == two.getMonth()) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	public String toString() {
+		
+		return "名称："+this.name+" 月份："+this.month;
+	}
+
+//	父类的构造函数不允许被继承、不允许被重写
+	public Animal() {
+		System.out.println("我是父类的无参构造函数");
+	}
+
+	public Animal(String name, int month) {
+		System.out.println("我是父类的带参构造");
+		this.setName(name);
+		this.setMonth(month);
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getMonth() {
+		return month;
+	}
+
+	public void setMonth(int month) {
+		this.month = month;
+	}
+
+	public String getPinzhong() {
+		return pinzhong;
+	}
+
+	public void setPinzhong(String pinzhong) {
+		this.pinzhong = pinzhong;
+	}
+
+	//	final方法： 不允许子类重写
+	public final void eat() {
+		System.out.println(this.name + "-吃东西");
+	}
+
+	public void eat(String name) {
+		System.out.println(name + "在吃东西");
+	}
+
+	public Animal jump() {
+		System.out.println("跳跃是本能");
+		return new Animal();
+	}
+}

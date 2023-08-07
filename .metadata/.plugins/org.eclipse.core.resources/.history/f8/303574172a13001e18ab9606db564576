@@ -1,0 +1,12 @@
+package com.imooc.string;
+
+public class StringDemo1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String str = "Java 编程基础";
+		System.out.println("字符串的长度是:"+str.length());
+		System.out.println(str.charAt(6));
+	}
+
+}

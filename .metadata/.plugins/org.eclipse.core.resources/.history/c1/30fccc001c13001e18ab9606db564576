@@ -1,0 +1,26 @@
+package com.imooc.test;
+
+public class TryDemoFive {
+	public void testOne() throws AgeException {
+
+	}
+
+	public void testTwo() {
+		try {
+			testOne();
+		} catch (AgeException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public void testThree() {
+
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

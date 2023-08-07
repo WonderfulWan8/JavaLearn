@@ -1,0 +1,15 @@
+package com.imooc.sp;
+//懒汉式：
+public class SingletoTwo {
+//	1.创建类中私有构造
+	private SingletoTwo() {
+		
+	}
+//	2.创建该类型的私有静态实例
+	private static SingletoTwo instance = null;
+//	3.创建公有静态方法，返回静态实例对象
+	private static SingletoTwo getInstance() {
+		instance = new SingletoTwo();
+		return isntance;
+	}
+}

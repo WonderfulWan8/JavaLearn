@@ -1,0 +1,38 @@
+package com.imooc.practice.p7;
+
+public class Rectangle extends Shape {
+	private double width;
+	private double height;
+
+	public Rectangle() {
+
+	}
+
+	public Rectangle(double width, double height) {
+		this.setWidth(width);
+		this.setHeight(height);
+	}
+
+	public double getWidth() {
+		return width;
+	}
+
+	public void setWidth(double width) {
+		this.width = width;
+	}
+
+	public double getHeight() {
+		return height;
+	}
+
+	public void setHeight(double height) {
+		this.height = height;
+	}
+
+	@Override
+	public void area() {
+		// TODO Auto-generated method stub
+		System.out.println("矩形的面积为" + this.width * this.height);
+	}
+
+}

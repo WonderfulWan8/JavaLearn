@@ -1,0 +1,20 @@
+package com.imooc.test;
+
+import com.imooc.practice.p8.Animal;
+import com.imooc.practice.p8.Cat;
+
+public class Test8 {
+	public static void main(String[] args) {
+		Animal[] aList = new Animal[5];
+		int n;
+		for(int i=0;i<aList.length;i++) {
+			 n = (int) (Math.random()*3);
+			switch (n){
+			
+				case 0;
+			}
+		}
+		
+		
+	}
+}

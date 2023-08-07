@@ -1,0 +1,8 @@
+package com.imooc.wrap;
+
+public class WrapTestOne {
+	public static void main(String[] args) {
+//		装箱：把基本类型转换成包装类
+		
+	}
+}

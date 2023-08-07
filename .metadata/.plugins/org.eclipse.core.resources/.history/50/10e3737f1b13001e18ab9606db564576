@@ -1,0 +1,8 @@
+package com.imooc.test;
+
+public class AgeException extends Exception {
+//	自定义异常类
+	public AgeException() {
+		super("需要亲友陪同");
+	}
+}

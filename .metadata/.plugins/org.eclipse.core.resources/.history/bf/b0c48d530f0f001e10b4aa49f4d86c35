@@ -1,0 +1,7 @@
+package com.imooc.test;
+
+public class MasterTest {
+	Master m1 = new Master();
+	Dog d1 = new Dog();
+	Cat c1 = new Cat();
+}

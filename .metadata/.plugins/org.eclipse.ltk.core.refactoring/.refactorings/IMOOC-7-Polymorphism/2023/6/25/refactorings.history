@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.imooc.poly&apos; to &apos;com.imooc.animal&apos;&#x0D;&#x0A;- Original project: &apos;IMOOC-7-Polymorphism&apos;&#x0D;&#x0A;- Original element: &apos;IMOOC-7-Polymorphism/src/com.imooc.poly&apos;&#x0D;&#x0A;- Renamed element: &apos;IMOOC-7-Polymorphism/src/com.imooc.animal&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.imooc.poly&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;com.imooc.poly" name="com.imooc.animal" qualified="false" references="true" stamp="1687163015189" textual="false" version="1.0"/>
+</session>

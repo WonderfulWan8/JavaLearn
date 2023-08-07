@@ -1,0 +1,10 @@
+package com.imooc.test;
+
+public class TryDemoFour {
+	public static void testAge() {
+		
+	}
+	public static void main(String[] args) {
+		
+	}
+}

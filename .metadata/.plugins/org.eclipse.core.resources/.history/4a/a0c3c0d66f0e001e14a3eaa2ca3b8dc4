@@ -1,0 +1,5 @@
+package com.imooc.sp;
+
+public class SingletoOne {
+//	创建类中私有构造
+}

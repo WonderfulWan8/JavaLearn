@@ -1,0 +1,15 @@
+package com.imooc.test;
+
+import com.imooc.practice.p5_poly.Animal;
+import com.imooc.practice.p5_poly.Bird;
+
+public class Test5 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Animal one = new Bird();
+		one.eat();
+//		one.fly();
+	}
+
+}

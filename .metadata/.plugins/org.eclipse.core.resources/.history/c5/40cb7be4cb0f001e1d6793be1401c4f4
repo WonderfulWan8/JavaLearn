@@ -1,0 +1,11 @@
+package com.imooc.practice.p7;
+
+public class Circle extends Shape {
+
+	@Override
+	public void area() {
+		// TODO Auto-generated method stub
+		System.out.println("圆形的面积为38.465");
+	}
+
+}

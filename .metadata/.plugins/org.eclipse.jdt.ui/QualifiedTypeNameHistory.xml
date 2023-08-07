@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="com.imooc.animal.Cat"/>
+<fullyQualifiedTypeName name="com.imooc.practice.p2.Waxberry"/>
+<fullyQualifiedTypeName name="com.imooc.sp.SingletoOne"/>
+<fullyQualifiedTypeName name="com.imooc.sp.SingletoTwo"/>
+<fullyQualifiedTypeName name="com.imooc.animal.Animal"/>
+<fullyQualifiedTypeName name="com.imooc.practice.p6.Animal"/>
+<fullyQualifiedTypeName name="com.imooc.practice.p7.Rectangle"/>
+<fullyQualifiedTypeName name="com.imooc.practice.p8.Animal"/>
+<fullyQualifiedTypeName name="com.imooc.practice.p8.Cat"/>
+<fullyQualifiedTypeName name="com.imooc.practice.p8.Dog"/>
+<fullyQualifiedTypeName name="com.imooc.tel.Inet"/>
+<fullyQualifiedTypeName name="com.imooc.people.Person"/>
+<fullyQualifiedTypeName name="com.imooc.people.Person.Heart"/>
+<fullyQualifiedTypeName name="java.util.InputMismatchException"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+</qualifiedTypeNameHistroy>

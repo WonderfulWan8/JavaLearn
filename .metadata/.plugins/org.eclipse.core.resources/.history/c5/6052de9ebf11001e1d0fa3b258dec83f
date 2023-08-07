@@ -1,0 +1,14 @@
+package com.imooc.people;
+
+public class Person {
+	int age;
+	public Heart getHeart() {
+		return new Heart();
+	}
+	class Heart{
+		public String beat() {
+//			System.out.println("");
+			return "ĞÄÔàÔÚÌø¶¯";
+		}
+	}
+}

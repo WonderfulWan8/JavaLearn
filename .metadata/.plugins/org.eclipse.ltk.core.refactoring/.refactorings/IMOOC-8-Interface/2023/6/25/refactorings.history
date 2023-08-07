@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.imooc.tel.SmartPhone&apos; to &apos;SmartWatch&apos;&#x0D;&#x0A;- Original project: &apos;IMOOC-8-Interface&apos;&#x0D;&#x0A;- Original element: &apos;com.imooc.tel.SmartPhone&apos;&#x0D;&#x0A;- Renamed element: &apos;com.imooc.tel.SmartWatch&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;SmartPhone&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.imooc.tel{SmartPhone.java[SmartPhone" matchStrategy="1" name="SmartWatch" qualified="false" references="true" similarDeclarations="false" stamp="1687313424280" textual="false" version="1.0"/>
+</session>

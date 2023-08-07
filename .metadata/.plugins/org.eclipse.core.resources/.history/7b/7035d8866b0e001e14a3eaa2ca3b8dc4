@@ -1,0 +1,18 @@
+package com.imooc.practice.p2;
+
+public class Waxberry extends Fruits {
+	private String color;
+	public Waxberry() {
+		
+	}
+	public Waxberry(String shape,String,taste,String color) {
+		super.s
+	}	
+	public String getColor() {
+		return color;
+	}
+	public void setColor(String color) {
+		this.color = color;
+	}
+	
+}

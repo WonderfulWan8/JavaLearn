@@ -1,0 +1,28 @@
+package com.imooc.test;
+
+import com.imooc.tel.Camera;
+import com.imooc.tel.Fourthphone;
+import com.imooc.tel.IPhoto;
+import com.imooc.tel.Inet;
+
+public class PhoneTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Fourthphone fp = new Fourthphone();
+		fp.call();
+		fp.message();
+		fp.music();
+		fp.game();
+//		fp.photo();
+		System.out.println("==================");
+//		手机和相机都可以实现拍照
+		IPhoto ip = new Fourthphone();
+		ip.photo();
+		ip = new Camera();
+		ip.photo();
+		System.out.println("==================");
+		System.out.println(Inet.temp);
+		
+	}
+}

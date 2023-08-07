@@ -1,0 +1,5 @@
+package com.imooc.practice.p7;
+
+public abstract class Shape {
+	public void abstract area();
+}

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+<!--        goods_id  ==> goodsId 驼峰转换-->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+<!--            设置数据库类型-->
+            <property name="helperDialect" value="mysql"/>
+<!--            分页合理化-->
+            <property name="reasonalbe" value="true"/>
+        </plugin>
+    </plugins>
+    <environments default="dev">
+        <environment id="dev">
+<!--            采用JDBC的方式对数据进行链接-->
+            <transactionManager type="JDBC"></transactionManager>
+<!--            采用连接池方式 进行数据库连接-->
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/babytun?useUnicode=true&amp;characterEncoding=UTF-8"/>
+                <property name="username" value="root"/>
+                <property name="password" value="aA867198"/>
+            </dataSource>
+        </environment>
+
+        <environment id="prd">
+            <!--            采用JDBC的方式对数据进行链接-->
+            <transactionManager type="JDBC"></transactionManager>
+            <!--            采用连接池方式 进行数据库连接-->
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://192.168.1.155:3306/babytun?useUnicode=true&amp;characterEncoding=UTF-8"/>
+                <property name="username" value="root"/>
+                <property name="password" value="aA86198"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="mappers/goods.xml"/>
+        <mapper resource="mappers/goodsDetail.xml"/>
+    </mappers>
+</configuration>

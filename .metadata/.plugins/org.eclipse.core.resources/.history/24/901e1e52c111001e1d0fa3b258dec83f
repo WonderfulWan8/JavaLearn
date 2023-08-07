@@ -1,0 +1,19 @@
+package com.imooc.people;
+
+public class Person {
+	int age;
+	public Heart getHeart() {
+		return new Heart();
+	}
+//	成员内部类
+	/*
+	 * 1、内部类在外部使用时，无法直接实例化，需要借由外部类信息才能实例化
+	 * 2、内部类的访问修饰符可以任意，但是访问范围会受到影响
+	 */
+	class Heart{
+		public String beat() {
+			return "心脏在跳动";
+		}
+	}
+//	
+}

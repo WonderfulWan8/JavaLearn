@@ -1,0 +1,12 @@
+package com.imooc.practice;
+
+import com.imooc.practice.p2.Fruits;
+
+public class Test {
+	public static void main(String[] args) {
+//		Person p1 = new Person("ÀîÃ÷",18,"ÄÐ");
+//		p1.toString();
+		Fruits f1 = new Fruits("Ô²","Ìð");
+		Fruits f2 = new Fruits("Ô²","Ìð");
+	}
+}

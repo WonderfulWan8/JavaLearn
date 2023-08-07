@@ -1,0 +1,5 @@
+package com.imooc.string;
+
+public class StringDemo2 {
+	String str = new String();
+}

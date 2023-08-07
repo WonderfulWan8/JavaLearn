@@ -1,0 +1,6 @@
+package com.imooc.practice.p2;
+
+public class Banana {
+	private String variety;
+	
+}

@@ -1,0 +1,18 @@
+package com.imooc.animal;
+
+public class Dog extends Animal {
+	
+	private String sex;
+	
+	public void sleep() {
+		System.out.println("¹·Ë¯¾õ");
+	}
+	
+	public Dog() {
+		
+	}
+	public Dog(String name,int age) {
+		super.setName(name);
+		super.setAge(age);
+	}
+}

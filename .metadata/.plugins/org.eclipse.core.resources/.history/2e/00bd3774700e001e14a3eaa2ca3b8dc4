@@ -1,0 +1,10 @@
+package com.imooc.sp;
+
+public class SingletoOne {
+//	1.创建类中私有构造
+	private SingletoOne() {
+		
+	}
+//	2.创建该类型的私有静态实例
+	private static SingletoOne instance = new SingletoOne();
+}

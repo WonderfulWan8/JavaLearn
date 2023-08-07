@@ -1,0 +1,12 @@
+package com.imooc.string;
+
+public class StringDemo6 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//		String的不可变性
+//		String对象一旦创建，则不能修改
+//		所谓的修改是指创建了新的对象，所指向的内存空间不变
+	}
+
+}

@@ -1,0 +1,7 @@
+package com.imooc.tel;
+
+public class Telephone {
+	public void call() {
+		System.out.println("手机可以打电话");
+	}
+}

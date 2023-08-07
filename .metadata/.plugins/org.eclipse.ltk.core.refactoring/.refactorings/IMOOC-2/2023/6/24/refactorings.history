@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Encapsulate field &apos;com.imooc.person.Person.price&apos; in &apos;com.imooc.person.Person&apos;&#x0D;&#x0A;- Original project: &apos;IMOOC-2&apos;&#x0D;&#x0A;- Original element: &apos;com.imooc.person.Person.price&apos;&#x0D;&#x0A;- Getter method name: &apos;getPrice&apos;&#x0D;&#x0A;- Setter method name: &apos;setPrice&apos;&#x0D;&#x0A;- Field visibility: &apos;public&apos;&#x0D;&#x0A;- Use getter and setter methods in declaring type" comments="false" declaring="true" description="Encapsulate field &apos;price&apos;" flags="589830" getter="getPrice" id="org.eclipse.jdt.ui.self.encapsulate" input="/src&lt;com.imooc.person{Person.java[Person^price" insertion="11" setter="setPrice" stamp="1686965132625" version="1.0" visibility="1"/>
+</session>

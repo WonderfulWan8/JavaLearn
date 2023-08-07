@@ -1,0 +1,14 @@
+package com.imooc.test;
+
+import com.imooc.sp.SingletoOne;
+
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		SingletoOne s1 = SingletoOne.getInstance();
+		SingletoOne s2 = SingletoOne.getInstance();
+		System.out.println(s1.equals(s2));
+	}
+
+}

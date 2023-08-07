@@ -1,0 +1,7 @@
+package com.imooc.test;
+
+public class Test8 {
+	public static void main(String[] args) {
+		Animal a1 = new Cat();
+	}
+}

@@ -1,0 +1,10 @@
+package com.imooc.string;
+
+public class StringDemo3 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String str = new String("Java ±à³Ì »ù´¡");
+	}
+
+}

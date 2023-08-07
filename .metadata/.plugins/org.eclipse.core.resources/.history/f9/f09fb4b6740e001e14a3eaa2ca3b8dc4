@@ -1,0 +1,8 @@
+package com.imooc.practice.p3_singletoone;
+
+public class Earth {
+	private Earth() {
+		System.out.println("µØÇòµ®Éú");
+	}
+	
+}	

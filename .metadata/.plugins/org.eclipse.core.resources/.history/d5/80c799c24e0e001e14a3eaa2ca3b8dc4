@@ -1,0 +1,16 @@
+package com.imooc.test;
+
+import com.imooc.animal.Animal;
+
+public class Test3 {
+	public static void main(String[] args) {
+		Animal one = new Animal("花花", 2);
+		Animal two = new Animal("花花", 2);
+		System.out.println(one.equals(two));
+		System.out.println(one == two);
+		String str1 = new String("123");
+		String str2 = new String("123");
+		System.out.println(str1.equals(str2));
+		System.out.println(str1 == str2);
+	}
+}

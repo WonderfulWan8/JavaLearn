@@ -1,0 +1,9 @@
+package com.imooc.animal;
+
+public class Animal {
+	private String name;
+	private int age;
+	public void eat() {
+		System.out.println("¶¯Îï³Ô~");
+	}
+}

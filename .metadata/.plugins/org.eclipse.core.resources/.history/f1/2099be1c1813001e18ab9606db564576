@@ -1,0 +1,14 @@
+package com.imooc.test;
+
+import java.util.Scanner;
+
+public class TryDemoFour {
+	public static void testAge() {
+		System.out.println(" ‰»ÎƒÍ¡‰£∫");
+		Scanner sc = new Scanner(System.in);
+		int age = sc.nextInt()
+	}
+	public static void main(String[] args) {
+		
+	}
+}

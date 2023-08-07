@@ -1,0 +1,16 @@
+package com.imooc.test;
+
+import com.imooc.animal.Animal;
+import com.imooc.animal.Cat;
+import com.imooc.animal.Dog;
+
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Animal a1 = new Animal();
+		Cat c1 = new Cat();
+		Dog d1 = new Dog();
+	}
+
+}

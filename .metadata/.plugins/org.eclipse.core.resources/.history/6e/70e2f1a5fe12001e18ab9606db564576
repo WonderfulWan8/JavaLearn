@@ -1,0 +1,9 @@
+package com.imooc.test;
+
+public class TryDemoOne {
+	public static void main(String[] args) {
+		int one = 12;
+		int two = 2;
+		System.out.println("1/2:"+one/two);
+	}
+}

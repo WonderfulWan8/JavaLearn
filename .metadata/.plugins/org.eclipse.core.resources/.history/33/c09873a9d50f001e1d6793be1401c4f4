@@ -1,0 +1,5 @@
+package com.imooc.tel;
+//½Ó¿ÚĞŞÊÎ·û Ä¬ÈÏpublic
+public interface Inet {
+
+}

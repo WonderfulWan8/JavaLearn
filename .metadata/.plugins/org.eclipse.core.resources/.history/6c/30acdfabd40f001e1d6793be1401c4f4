@@ -1,0 +1,5 @@
+package com.imooc.tel;
+
+public class Camera implements IPhtot{
+
+}

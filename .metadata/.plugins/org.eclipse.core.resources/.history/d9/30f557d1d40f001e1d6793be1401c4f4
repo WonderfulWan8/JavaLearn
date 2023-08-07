@@ -1,0 +1,13 @@
+package com.imooc.tel;
+
+public class Fourthphone extends Thirdphone {
+//	public void photo() {
+//		System.out.println("втед");
+//	}
+	public void newwork() {
+		System.out.println("иомЬ");
+	}
+	public void game() {
+		System.out.println("мФсно╥");
+	}
+}

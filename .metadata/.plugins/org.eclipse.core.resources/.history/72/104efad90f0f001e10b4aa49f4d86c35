@@ -1,0 +1,27 @@
+package com.imooc.animal;
+
+public class Master {
+	/*
+	 * 	Î¹Ñø³èÎï
+	 * 	Î¹Ã¨ßä - ³ÔÍêÍæÏßÇò
+	 * 	Î¹¹· - ³ÔÍêË¯¾õ
+	 */
+	public Master() {
+		
+	}
+	public void feed(Cat cat) {
+		System.out.println("³ÔÍêÍæÏßÇò");
+	}
+	public void feed(Dog dog) {
+		System.out.println("³ÔÍêË¯¾õ");
+	}
+	public void feed(Animal animal) {
+		if(animal instanceof Cat) {
+			Cat temp = (Cat) animal;
+			temp.eat();
+		}else if(animal instanceof Dog) {
+			Dog temp = (Dog) animal;
+			temp.eat();
+		}
+	}
+}

@@ -1,0 +1,11 @@
+package com.imooc.practice.p7;
+
+public class Rectangle extends Shape {
+
+	@Override
+	public void area(double width,double height) {
+		// TODO Auto-generated method stub
+		System.out.println("矩形的面积为30.0");
+	}
+
+}

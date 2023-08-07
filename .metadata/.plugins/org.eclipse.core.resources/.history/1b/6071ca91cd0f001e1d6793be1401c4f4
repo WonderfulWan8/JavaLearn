@@ -1,0 +1,11 @@
+package com.imooc.test;
+
+import com.imooc.practice.p8.Animal;
+import com.imooc.practice.p8.Cat;
+
+public class Test8 {
+	public static void main(String[] args) {
+		Animal aList = new Animal();
+		
+	}
+}

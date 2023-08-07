@@ -1,0 +1,10 @@
+package com.imooc.tel;
+
+public class Thirdphone extends SecondPhone {
+	public void video() {
+		System.out.println("ø¥ ”∆µ");
+	}
+	public void music() {
+		System.out.println("Ã˝“Ù¿÷");
+	}
+}

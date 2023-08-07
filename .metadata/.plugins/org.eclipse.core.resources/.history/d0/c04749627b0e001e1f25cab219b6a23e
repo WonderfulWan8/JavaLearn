@@ -1,0 +1,17 @@
+package com.imooc.animal;
+
+public class Cat extends Animal {
+	
+	private double weight;
+	
+	
+	public void run() {
+		System.out.println("Ã¨ÅÜÂ·");
+	}
+	
+	@Override
+	public void eat() {
+		// TODO Auto-generated method stub
+		System.out.println("Ã¨³ÔÓã");
+	}
+}

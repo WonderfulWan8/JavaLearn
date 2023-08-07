@@ -1,0 +1,9 @@
+package com.imooc.test;
+
+import com.imooc.practice.p7.Circle;
+import com.imooc.practice.p7.Rectangle;
+
+public class Test7 {
+	Rectangle c1 = new Rectangle();
+	
+}
