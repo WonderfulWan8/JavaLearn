@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Aug 08 10:40:16 CST 2023
+logkit-1.0.1.jar>central=
+logkit-1.0.1.jar>alimaven=
+logkit-1.0.1.pom>central=
+logkit-1.0.1.pom>alimaven=

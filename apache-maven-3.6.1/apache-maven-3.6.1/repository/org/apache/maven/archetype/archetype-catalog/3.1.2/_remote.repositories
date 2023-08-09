@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Fri Jul 17 08:59:10 CST 2020
+archetype-catalog-3.1.2.jar>alimaven=
+archetype-catalog-3.1.2.jar>central=
+archetype-catalog-3.1.2.pom>alimaven=
+archetype-catalog-3.1.2.pom>central=

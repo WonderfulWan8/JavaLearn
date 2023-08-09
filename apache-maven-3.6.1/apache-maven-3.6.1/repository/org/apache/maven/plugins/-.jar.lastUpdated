@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon Dec 14 15:58:26 CST 2020
+http\://maven.aliyun.com/nexus/content/repositories/central/.error=
+http\://maven.aliyun.com/nexus/content/repositories/central/.lastUpdated=1607932706846
+https\://repo.maven.apache.org/maven2/.lastUpdated=1572927778342
+https\://repo.maven.apache.org/maven2/.error=

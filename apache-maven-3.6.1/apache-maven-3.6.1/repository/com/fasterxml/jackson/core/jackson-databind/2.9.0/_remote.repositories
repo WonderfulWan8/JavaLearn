@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon Jun 22 15:05:52 CST 2020
+jackson-databind-2.9.0.jar>central=
+jackson-databind-2.9.0.pom>central=
+jackson-databind-2.9.0.jar>alimaven=
+jackson-databind-2.9.0.pom>alimaven=

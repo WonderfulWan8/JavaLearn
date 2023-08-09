@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sat Dec 05 19:33:17 CST 2020
+https\://maven-repository.dev.java.net/nonav/repository/.error=Could not transfer artifact com.sun.jmx\:jmxri\:jar\:1.2.1 from/to java.net (https\://maven-repository.dev.java.net/nonav/repository)\: Cannot access https\://maven-repository.dev.java.net/nonav/repository with type legacy using the available connector factories\: BasicRepositoryConnectorFactory
+@legacy-java.net-https\://maven-repository.dev.java.net/nonav/repository/.lastUpdated=1607167997712
+http\://maven.aliyun.com/nexus/content/repositories/central/.error=
+http\://maven.aliyun.com/nexus/content/repositories/central/.lastUpdated=1607167997681

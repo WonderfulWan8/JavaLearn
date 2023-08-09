@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Feb 06 10:01:56 CST 2020
+@default-central-https\://repo.maven.apache.org/maven2/.lastUpdated=1580954516043
+https\://repo.maven.apache.org/maven2/.error=Could not transfer artifact org.apache.maven.wagon\:wagon-provider-api\:jar\:2.8 from/to central (https\://repo.maven.apache.org/maven2)\: \u6769\u6B10\u69F8\u9366\u3124\u5BCC\u93C8\u54C4\u6095\u7459\uFF46\u703D\u93C3\u5815\uFFFD\u6C2C\u7236\u9351\u8679\u5E47\u9428\u52EC\u6B8F\u93C3\u5815\u654A\u7487\uE224\u7D1D\u7039\u51A9\u5270\u935B\u5D07\u6F43\u93C8\uE100\u6E74\u93C8\u5D85\u59DF\u9363\u3126\u75C5\u93C8\u5909\u7CA0\u93C9\u51A8\u2589\u93C8\u5D85\u59DF\u9363\u3124\u7B02\u93C0\u8DFA\u57CC\u935D\u5D85\u7C32\u9286\uFFFD (repo.maven.apache.org)

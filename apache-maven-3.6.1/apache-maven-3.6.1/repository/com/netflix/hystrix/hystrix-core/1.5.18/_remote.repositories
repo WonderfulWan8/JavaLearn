@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Jun 23 15:37:58 CST 2020
+hystrix-core-1.5.18.jar>central=
+hystrix-core-1.5.18.pom>central=
+hystrix-core-1.5.18.jar>alimaven=
+hystrix-core-1.5.18.pom>alimaven=

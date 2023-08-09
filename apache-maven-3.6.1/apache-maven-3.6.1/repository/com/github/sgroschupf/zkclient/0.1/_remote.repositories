@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sat Dec 05 19:54:25 CST 2020
+zkclient-0.1.jar>alimaven=
+zkclient-0.1.jar>central=
+zkclient-0.1.pom>alimaven=
+zkclient-0.1.pom>central=

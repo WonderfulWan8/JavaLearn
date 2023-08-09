@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Aug 08 10:40:07 CST 2023
+maven-site-plugin-3.8.2.jar>central=
+maven-site-plugin-3.8.2.jar>alimaven=
+maven-site-plugin-3.8.2.pom>central=
+maven-site-plugin-3.8.2.pom>alimaven=

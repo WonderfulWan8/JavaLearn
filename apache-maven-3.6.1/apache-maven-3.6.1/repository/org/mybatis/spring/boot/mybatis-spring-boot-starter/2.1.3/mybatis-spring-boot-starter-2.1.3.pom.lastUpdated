@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sun Sep 20 23:41:13 CST 2020
+http\://maven.aliyun.com/nexus/content/repositories/central/.lastUpdated=1600616473340
+@default-central-https\://repo.maven.apache.org/maven2/.lastUpdated=1592443223794
+https\://repo.maven.apache.org/maven2/.error=Could not transfer artifact org.mybatis.spring.boot\:mybatis-spring-boot-starter\:pom\:2.1.3 from/to central (https\://repo.maven.apache.org/maven2)\: Connect to repo.maven.apache.org\:443 [repo.maven.apache.org/151.101.52.215] failed\: Connection timed out\: connect

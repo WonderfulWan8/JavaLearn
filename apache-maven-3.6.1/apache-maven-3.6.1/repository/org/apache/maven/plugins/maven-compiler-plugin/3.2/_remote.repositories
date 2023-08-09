@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sun Dec 06 16:18:12 CST 2020
+maven-compiler-plugin-3.2.jar>central=
+maven-compiler-plugin-3.2.jar>alimaven=
+maven-compiler-plugin-3.2.pom>central=
+maven-compiler-plugin-3.2.pom>alimaven=
