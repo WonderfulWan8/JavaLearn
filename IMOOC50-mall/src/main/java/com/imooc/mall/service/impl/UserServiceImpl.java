@@ -21,22 +21,18 @@ public class UserServiceImpl implements UserService {
     @Override
     public void reggister(String userName, String password) throws ImoocMallException {
         //查询用户是否存在，不允许重名
-        try {
-            User result = userMapper.selectByName(userName);
-            System.out.println("result:"+result);
-            if(result != null){
-                throw new ImoocMallException(ImoocMallExceptionEnum.NAME_EXISTED);
-            }
-//        写到 数据库
-            User user =new User();
-            user.setUsername(userName);
-            user.setPassword(password);
-            int count = userMapper.insertSelective(user);
-            if(count == 0){
-                throw new ImoocMallException(ImoocMallExceptionEnum.INSERT_FAILED);
-            }
-        } catch (ImoocMallException e) {
+        User result = userMapper.selectByName(userName);
+
+        if(result != null){
             throw new ImoocMallException(ImoocMallExceptionEnum.NAME_EXISTED);
+        }
+//        写到 数据库
+        User user =new User();
+        user.setUsername(userName);
+        user.setPassword(password);
+        int count = userMapper.insertSelective(user);
+        if(count == 0){
+            throw new ImoocMallException(ImoocMallExceptionEnum.INSERT_FAILED);
         }
     }
 }

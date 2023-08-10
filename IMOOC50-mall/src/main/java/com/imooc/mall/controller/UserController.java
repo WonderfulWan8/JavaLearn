@@ -41,12 +41,7 @@ public class UserController {
         if(password.length()<8){
             return ApiRestResponse.error(ImoocMallExceptionEnum.PASSWORD_TOO_SHORT);
         }
-
-        try {
-            userService.reggister(userName,password);
-        } catch (RuntimeException e) {
-            throw new RuntimeException(e.getMessage());
-        }
+        userService.reggister(userName,password);
 
         return ApiRestResponse.success();
     }

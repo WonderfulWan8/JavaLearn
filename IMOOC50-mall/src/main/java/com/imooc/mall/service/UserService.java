@@ -7,5 +7,5 @@ import org.springframework.stereotype.Service;
 
 public interface UserService {
     User getUserById();
-    void reggister(String userName, String password) throws ImoocMallException;
+    void reggister(String userName, String password) throws RuntimeException;
 }
