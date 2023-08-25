@@ -180,9 +180,24 @@
                 and name like #{query.keyword}
             </if>
             <if test="query.categoryIds != null">
-                and name like #{query.categoryIds}
+                and category_id in
+                <foreach collection="query.categoryIds" close=")" item="item" open="(" separator=",">
+                    #{item}
+                </foreach>
             </if>
+--             上架商品
+             and status = 1
         </where>
         order by update_time desc
     </select>
 </mapper>
+
+
+
+
+
+
+
+
+
+

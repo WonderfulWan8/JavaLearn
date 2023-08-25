@@ -16,7 +16,12 @@ public enum ImoocMallExceptionEnum {
     DELETE_FAILD(10013, "删除失败"),
     MKDIR_FAILD(10014, "文件夹创建失败"),
     UPLOAD_FAILD(10015, "图片上传失败"),
-    BATCHUPDATE_FAILD(10015, "批量更新状态失败"),
+    BATCHUPDATE_FAILD(10016, "批量更新状态失败"),
+    NOT_SELL(10017, "商品状态异常、商品状态不可售"),
+    NOT_ENOUGH(10018, "商品库存不足"),
+
+    CART_EMPTY(10019, "购物车已勾选商品为空"),
+    NO_ENUM(10020, "未找到对应枚举类"),
     SYSTEM_ERROR(20000, "系统异常"),
     ;
     /**
