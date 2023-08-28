@@ -1,5 +1,7 @@
 package com.imooc.mall.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.imooc.mall.common.Constant;
 import com.imooc.mall.exception.ImoocMallException;
 import com.imooc.mall.exception.ImoocMallExceptionEnum;
@@ -12,16 +14,26 @@ import com.imooc.mall.model.pojo.Order;
 import com.imooc.mall.model.pojo.OrderItem;
 import com.imooc.mall.model.pojo.Product;
 import com.imooc.mall.model.query.vo.CartVO;
+import com.imooc.mall.model.query.vo.OrderItemVO;
+import com.imooc.mall.model.query.vo.OrderVO;
 import com.imooc.mall.model.request.CreateOrderReq;
 import com.imooc.mall.service.CartService;
 import com.imooc.mall.service.OrderService;
+import com.imooc.mall.service.UserService;
 import com.imooc.mall.util.OrderCodeFactory;
+import com.imooc.mall.util.QRCodeGenerator;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -43,7 +55,13 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     OrderItemMapper orderItemMapper;
 
-//    数据库事务
+    @Autowired
+    UserService userService;
+
+    @Value("${file.upload.ip}")
+    String ip;
+
+    //    数据库事务
     @Transactional(rollbackFor = Exception.class)
     @Override
     public String create(CreateOrderReq createOrderReq) {
@@ -156,4 +174,169 @@ public class OrderServiceImpl implements OrderService {
         }
     }
 
+    @Override
+    public OrderVO detail(String orderNo) {
+        Order order = orderMapper.selectByOrderNo(orderNo);
+//        订单不存在 报错
+        if (order == null) {
+            throw new ImoocMallException(ImoocMallExceptionEnum.NO_ORDER);
+        }
+//         订单存在，则判断所属
+        Integer userId = UserFilter.currentUser.getId();
+        if (!order.getUserId().equals(userId)) {
+            throw new ImoocMallException(ImoocMallExceptionEnum.NOT_YOUR_ORDER);
+        }
+        OrderVO orderVO = getOrderVO(order);
+        return orderVO;
+    }
+
+    private OrderVO getOrderVO(Order order) {
+        OrderVO orderVO = new OrderVO();
+        BeanUtils.copyProperties(order, orderVO);
+//        获取订单对应的orderItemVOList
+        List<OrderItem> orderItemList = orderItemMapper.selectByOrderNo(order.getOrderNo());
+        List<OrderItemVO> orderItemVOList = new ArrayList<>();
+        for (int i = 0; i < orderItemList.size(); i++) {
+            OrderItem orderItem = orderItemList.get(i);
+            OrderItemVO orderItemVO = new OrderItemVO();
+            BeanUtils.copyProperties(orderItem, orderItemVO);
+            orderItemVOList.add(orderItemVO);
+        }
+        orderVO.setOrderItemVOList(orderItemVOList);
+        //            订单状态: 0用户已取消，10未付款（初始状态），20已付款，30已发货，40交易完成
+        orderVO.setOrderStatusName(Constant.OrderStatusEnum.codeOf(order.getOrderStatus()).getValue());
+        return orderVO;
+    }
+
+    @Override
+    public PageInfo listForCustomer(Integer pageNum, Integer pageSize) {
+        Integer userId = UserFilter.currentUser.getId();
+        PageHelper.startPage(pageNum, pageSize);
+        List<Order> orderList = orderMapper.selectForCustomer(userId);
+        List<OrderVO> orderVOList = orderListToOrderVOList(orderList);
+        PageInfo pageInfo = new PageInfo<>(orderList);
+        pageInfo.setList(orderVOList);
+        return pageInfo;
+    }
+
+    private List<OrderVO> orderListToOrderVOList(List<Order> orderList) {
+        List<OrderVO> orderVOList = new ArrayList<>();
+        for (int i = 0; i < orderList.size(); i++) {
+            Order order = orderList.get(i);
+            OrderVO orderVO = getOrderVO(order);
+            orderVOList.add(orderVO);
+        }
+        return orderVOList;
+    }
+
+    @Override
+    public void cancle(String orderNo) {
+        Order order = orderMapper.selectByOrderNo(orderNo);
+        if (order == null) {
+            throw new ImoocMallException(ImoocMallExceptionEnum.NO_ORDER);
+        }
+        if (order.getOrderStatus().equals(Constant.OrderStatusEnum.NOT_PAID.getCode())) {
+            order.setOrderStatus(Constant.OrderStatusEnum.CANCELED.getCode());
+            order.setEndTime(new Date());
+            int num = orderMapper.updateByPrimaryKeySelective(order);
+            if (num == 0) {
+                throw new ImoocMallException(ImoocMallExceptionEnum.UPDATE_FAILD);
+            }
+        } else {
+            throw new ImoocMallException(ImoocMallExceptionEnum.WRONG_ORDER_STATUS);
+        }
+    }
+
+    @Override
+    public String qrcode(String orderNo) {
+        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        HttpServletRequest request = attributes.getRequest();
+        request.getLocalPort();
+        String address = ip + ":" + request.getLocalPort();
+        String payUrl = "http://" + address + "/pay?orderNo=" + orderNo;
+        try {
+            QRCodeGenerator.generateORCodeImage(payUrl, 350, 350, Constant.FILE_UPLOAD_DIR + orderNo + ".png");
+        } catch (Exception e) {
+//            throw new RuntimeException(e);
+            e.printStackTrace();
+        } finally {
+        }
+        String pngAddress = "http://" + address + "/images/" + orderNo + ".png";
+        return pngAddress;
+    }
+
+    @Override
+    public PageInfo listForAdmin(Integer pageNum, Integer pageSize) {
+        PageHelper.startPage(pageNum, pageSize);
+        List<Order> orderList = orderMapper.selectAll();
+        List<OrderVO> orderVOList = orderListToOrderVOList(orderList);
+        PageInfo pageInfo = new PageInfo<>(orderList);
+        pageInfo.setList(orderVOList);
+        return pageInfo;
+    }
+
+    @Override
+    public void pay(String orderNo) {
+        Order order = orderMapper.selectByOrderNo(orderNo);
+        if (order == null) {
+            throw new ImoocMallException(ImoocMallExceptionEnum.NO_ORDER);
+        }
+        if (order.getOrderStatus() == Constant.OrderStatusEnum.NOT_PAID.getCode()) {
+            order.setOrderStatus(Constant.OrderStatusEnum.PAID.getCode());
+            order.setPayTime(new Date());
+            orderMapper.updateByPrimaryKeySelective(order);
+        } else {
+            throw new ImoocMallException(ImoocMallExceptionEnum.WRONG_ORDER_STATUS);
+
+        }
+    }
+
+    @Override
+    public void deliver(String orderNo) {
+        Order order = orderMapper.selectByOrderNo(orderNo);
+        if (order == null) {
+            throw new ImoocMallException(ImoocMallExceptionEnum.NO_ORDER);
+        }
+        if (order.getOrderStatus() == Constant.OrderStatusEnum.PAID.getCode()) {
+            order.setOrderStatus(Constant.OrderStatusEnum.DELEVERED.getCode());
+            order.setDeliveryTime(new Date());
+            orderMapper.updateByPrimaryKeySelective(order);
+        } else {
+            throw new ImoocMallException(ImoocMallExceptionEnum.WRONG_ORDER_STATUS);
+        }
+    }
+
+    @Override
+    public void finish(String orderNo) {
+        Order order = orderMapper.selectByOrderNo(orderNo);
+        if (order == null) {
+            throw new ImoocMallException(ImoocMallExceptionEnum.NO_ORDER);
+        }
+        //如果是普通用户 需要校验订单所属
+        if (!userService.checkAdminRole(UserFilter.currentUser) && order.getUserId().equals(UserFilter.currentUser.getId()) ) {
+            throw new ImoocMallException(ImoocMallExceptionEnum.NOT_YOUR_ORDER);
+        }
+        // 发货后可以完结订单
+        if (order.getOrderStatus() == Constant.OrderStatusEnum.DELEVERED.getCode()) {
+            order.setOrderStatus(Constant.OrderStatusEnum.FINISHED.getCode());
+            order.setEndTime(new Date());
+            orderMapper.updateByPrimaryKeySelective(order);
+        } else {
+            throw new ImoocMallException(ImoocMallExceptionEnum.WRONG_ORDER_STATUS);
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

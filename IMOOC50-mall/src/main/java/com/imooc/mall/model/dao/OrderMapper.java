@@ -1,7 +1,10 @@
 package com.imooc.mall.model.dao;
 
 import com.imooc.mall.model.pojo.Order;
+import com.imooc.mall.model.pojo.OrderItem;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public interface OrderMapper {
@@ -16,4 +19,9 @@ public interface OrderMapper {
     int updateByPrimaryKeySelective(Order record);
 
     int updateByPrimaryKey(Order record);
+
+    Order selectByOrderNo(String selectByOrderNo);
+
+    List<Order> selectForCustomer(Integer useId);
+    List<Order> selectAll();
 }
