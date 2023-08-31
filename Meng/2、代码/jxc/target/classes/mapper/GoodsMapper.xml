@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.atguigu.jxc.dao.GoodsDao">
+    <resultMap id="BaseResultMap" type="com.atguigu.jxc.entity.Goods">
+        <id column="goods_id" jdbcType="INTEGER" property="goodsId"/>
+        <result column="goods_code" jdbcType="INTEGER" property="goodsCode"/>
+        <result column="goods_name" jdbcType="INTEGER" property="goodsName"/>
+        <result column="inventory_quantity" jdbcType="INTEGER" property="inventoryQuantity"/>
+        <result column="min_num" jdbcType="INTEGER" property="minNum"/>
+        <result column="goods_model" jdbcType="TIMESTAMP" property="goodsModel"/>
+        <result column="goods_producer" jdbcType="TIMESTAMP" property="goodsProducer"/>
+        <result column="purchasing_price" jdbcType="TIMESTAMP" property="purchasingPrice"/>
+        <result column="last_purchasing_price" jdbcType="TIMESTAMP" property="lastPurchasingPrice"/>
+        <result column="remarks" jdbcType="TIMESTAMP" property="remarks"/>
+        <result column="selling_price" jdbcType="TIMESTAMP" property="sellingPrice"/>
+        <result column="state" jdbcType="TIMESTAMP" property="state"/>
+        <result column="goods_unit" jdbcType="TIMESTAMP" property="goodsUnit"/>
+        <result column="goods_type_id" jdbcType="TIMESTAMP" property="goodsTypeId"/>
+    </resultMap>
+    <select id="getMaxCode" resultType="java.lang.String">
+        SELECT MAX(goods_code)
+        FROM t_goods
+    </select>
+
+    <select id="getGoodsList" resultMap="BaseResultMap" parameterType="com.atguigu.jxc.entity.request.GoodsListReq">
+        select *
+        from t_goods
+        <where>
+            <if test="query.goodsTypeId != null">
+                AND goods_type_id =#{query.goodsTypeId}
+            </if>
+            <if test="query.codeOrName != null">
+                and goods_name LIKE CONCAT('%', #{query.codeOrName}, '%')  OR goods_code LIKE CONCAT('%', #{query.codeOrName}, '%')
+            </if>
+        </where>
+    </select>
+</mapper>
